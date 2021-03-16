@@ -1,25 +1,48 @@
-function MediaPlayer(config) {
-	this.media = config.el;
-}
+import MediaPlayer from "./MediaPlayer.js";
+import AutoPlay from "./plugins/AutoPlay.js";
 
-MediaPlayer.prototype.play = function () {
-	this.media.play();
-};
+const video = document.querySelector("video");
+const player = new MediaPlayer({
+	el: video,
+	plugins: [
+		// new AutoPlay()
+	],
+});
 
-MediaPlayer.prototype.pause = function () {
-	this.media.pause();
-};
+const playButton = document.querySelector("#playButton");
+playButton.onClick = () => MediaPlayer.togglePlay();
 
-MediaPlayer.prototype.togglePlay = function () {
-	if (this.media.paused) {
-		this.play();
+const muteButton = document.querySelector("#muteButton");
+muteButton.onClick = () => {
+	if (MediaPlayer.media.muted) {
+		player.unmute();
 	} else {
-		this.pause();
+		player.mute();
 	}
 };
 
-const video = document.querySelector("video");
-const player = new MediaPlayer({ el: video });
+// function MediaPlayer(config) {
+// 	this.media = config.el;
+// }
 
-const button = document.querySelector("button");
-button.onclick = () => player.togglePlay();
+// MediaPlayer.prototype.play = function () {
+// 	this.media.play();
+// };
+
+// MediaPlayer.prototype.pause = function () {
+// 	this.media.pause();
+// };
+
+// MediaPlayer.prototype.togglePlay = function () {
+// 	if (this.media.paused) {
+// 		this.play();
+// 	} else {
+// 		this.pause();
+// 	}
+// };
+
+// const video = document.querySelector("video");
+// const player = new MediaPlayer({ el: video });
+
+// const button = document.querySelector("button");
+// button.onclick = () => player.togglePlay();
