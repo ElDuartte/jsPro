@@ -3,17 +3,24 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-	"type": "module",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "parcel index.html ejercicios/index.html ejercicios/**/*.html"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ElDuartte/jsPro.git"
+	},
 	"keywords": [],
 	"author": "Juan Felipe Duarte <jf@duartte.co>",
 	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ElDuartte/jsPro/issues"
+	},
+	"homepage": "https://github.com/ElDuartte/jsPro#readme",
 	"devDependencies": {
-		"live-server": "^1.2.1",
-		"parcel-bundler": "^1.12.5",
+		"cli": "^1.0.1",
+		"ts-loader": "^8.1.0",
 		"typescript": "^4.2.4"
 	},
 	"browserslist": [
